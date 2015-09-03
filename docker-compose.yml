@@ -1,8 +1,12 @@
 web:
   image: node
   ports:
-    - 1337:1337
+    - 1337
   volumes:
     - ./app:/app:ro
   working_dir: /app
   command: node index.js
+nginx:
+  image: nginx
+  ports:
+    - 1337:80
